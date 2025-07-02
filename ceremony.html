@@ -162,6 +162,31 @@
         <!-- end wpo-video-section-->
 
 
+        <!-- Second Video Section -->
+<section class="wpo-video-section section-padding">
+      <h2 style="text-align: center; margin-top: 50px; font-size: 40px;"> Finally the day has come</h2>
+    <div class="container-fluid">
+        <div class="video-wrap" style="position: relative;">
+            <!-- Background image -->
+            <img id="videoBg2" src="assets/images/video2bg.png" alt="" style="width: 100%; display: block;">
+
+            <!-- Play button -->
+            <button class="video-btn"
+                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: none; background: none; cursor: pointer;"
+                id="playBtn2">
+                <i class="fi flaticon-play" style="font-size: 48px; color: white;"></i>
+            </button>
+
+            <!-- Video element -->
+            <video id="homeVideo2" style="width: 100%; display: none;">
+                <source src="assets/images/video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+
 <!-- ----------------------- How it happ ================== -->
 <section class="wpo-event-section-s2 section-padding pt-0" id="event">
             <div class="container">
@@ -415,6 +440,25 @@
         // Optional: reset video to beginning
         video.currentTime = 0;
     });
+
+const playBtn2 = document.getElementById('playBtn2');
+    const video2 = document.getElementById('homeVideo2');
+    const videoBg2 = document.getElementById('videoBg2');
+
+    playBtn2.addEventListener('click', function () {
+        videoBg2.style.display = 'none';
+        playBtn2.style.display = 'none';
+        video2.style.display = 'block';
+        video2.play();
+    });
+
+    video2.addEventListener('ended', function () {
+        video2.style.display = 'none';
+        videoBg2.style.display = 'block';
+        playBtn2.style.display = 'block';
+        video2.currentTime = 0;
+    });
+
 </script>
 
 
